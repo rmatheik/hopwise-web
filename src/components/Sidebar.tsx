@@ -1,11 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // For navigation
 import '../../css/styles.css';  // Ensure your styles are linked
 
+// Define SidebarProps to accept onLogout
 interface SidebarProps {
   onSectionClick: (section: string) => void;
+  onLogout: () => void; // Add this line
+}
+interface SidebarProps {
+  onSectionClick: (section: string) => void;
+  onLogout: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ onSectionClick }) => {
+const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onLogout }) => {
   return (
     <nav className="sidebar">
       <div className="section">
@@ -40,7 +47,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick }) => {
           <li className="menu-item">
             <span className="icon">📂</span>
             <span>Company</span>
-            {/* Sub-menu for Company */}
             <ul className="sub-menu">
               <li onClick={() => onSectionClick('Overview')}>Overview</li>
               <li onClick={() => onSectionClick('Business Model')}>Business Model</li>
@@ -66,6 +72,13 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick }) => {
             <span>Contact</span>
           </li>
         </ul>
+      </div>
+
+      {/* Logout Button */}
+      <div className="logout-section">
+        <button className="logout-button" onClick={onLogout}>
+          Logout
+        </button>
       </div>
     </nav>
   );

@@ -62,13 +62,14 @@
 
 .graph-placeholder {
     height: 200px;
-    background-color: #e5e7eb;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     font-size: 1rem;
-    color: #6b7280;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Breakdown Sections (Bottom) */
