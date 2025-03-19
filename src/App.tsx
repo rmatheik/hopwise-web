@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Sidebar from './components/Sidebar';
 import CompanyPage from './components/CompanyPage';
 import LoginPage from './components/LoginPage';
+import MarketFitPage from './components/MarketFitPage';
 import '../css/styles.css';
 
 const App: React.FC = () => {
@@ -40,6 +41,7 @@ const App: React.FC = () => {
             <Route path="/" element={isAuthenticated ? <Navigate to="/company" /> : <Navigate to="/login" />} />
             <Route path="/login" element={isAuthenticated ? <Navigate to="/company" /> : <LoginPage onLogin={handleLoginSuccess} />} />
             <Route path="/company" element={isAuthenticated ? <CompanyPage /> : <Navigate to="/login" />} />
+            <Route path="/market-fit" element={isAuthenticated ? <MarketFitPage /> : <Navigate to="/login" />} /> {}
           </Routes>
         </div>
       </div>

@@ -1,0 +1,243 @@
+.market-fit-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: #ffffff;
+  }
+  
+  .market-fit-dashboard h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+  
+  /* Main container for forecast graph and summary cards */
+.forecast-revenue-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+/* Forecast Revenue Graph (Left) */
+.forecast-revenue-graph {
+  width: 70%;
+  max-width: 900px;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Summary Cards (Right) */
+.forecast-summary-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  gap: 1.5rem;
+}
+
+.forecast-summary-card {
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.forecast-summary-card h4 {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-summary-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.forecast-summary-card span {
+  display: block;
+  font-size: 0.875rem;
+  color: #10b981;
+  margin-top: 0.5rem;
+}
+
+  
+/* Market Breakdown Section */
+/* Market Breakdown Section */
+/* Parent Layout for Graph & Market Breakdown */
+.forecast-market-section {
+  display: flex;
+  justify-content: flex-start; /* Aligns to the left */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+/* Market Breakdown Section - Move Left */
+.market-breakdown-container {
+  display: flex;
+  justify-content: flex-start; /* Aligns to the left */
+  width: 100%;
+  max-width: 1200px; /* Ensures it aligns with the graph */
+  margin-top: 1.5rem;
+  padding-left: 2rem; /* Adjust spacing from the sidebar */
+}
+
+
+/* Market Breakdown Box */
+/* Market Breakdown Section - Keep Left but Center Contents */
+.market-breakdown-container {
+  display: flex;
+  justify-content: flex-start; /* Keeps it aligned with the graph */
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1.5rem;
+  padding-left: 2rem; /* Adjust spacing from the sidebar */
+}
+
+/* Market Breakdown Box */
+.market-breakdown {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  text-align: center;
+  margin-left: 0; /* No forced centering */
+}
+
+/* Market Circles Container */
+.market-circle-container {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  transform: translateX(50px); /* Move everything slightly right */
+}
+
+.market-circle {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000 !important; /* Ensure text is black */
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow */
+  z-index: 10; /* Ensure text stays above the background */
+}
+
+
+/* TAM (Largest Circle) */
+.tam {
+  width: 200px;
+  height: 200px;
+  background-color: #a9c7e6;
+  top: 0px;
+  left: 10px; /* Shift slightly right */
+}
+
+/* SAM (Medium Circle) */
+.sam {
+  width: 150px;
+  height: 150px;
+  background-color: #d5f0f5;
+  top: 40px;
+  left: 35px; /* Shift slightly right */
+}
+
+/* SOM (Smallest Circle) */
+.som {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(178, 215, 236);
+  top: 90px;
+  left: 60px; /* Shift slightly right */
+}
+
+/* Labels inside circles */
+.circle-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000 !important; /* Ensure text is visible */
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 20; /* Keep text above other circles */
+}
+
+/* Position text at the top center for TAM & SAM */
+.tam .circle-label {
+  top: 7%;
+}
+.sam .circle-label {
+  top: 15%; /* Move text towards the top */
+}
+
+/* Keep SOM text centered */
+.som .circle-label {
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Ensure perfect vertical centering */
+}
+
+
+/* Legend */
+.market-legend {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.legend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.tam-color {
+  background-color: #a9c7e6;
+}
+
+.sam-color {
+  background-color: #d5f0f5;
+}
+
+.som-color {
+  background-color: rgb(178, 215, 236);
+}
+
+.legend-value {
+  font-weight: bold;
+  color: #333;
+}

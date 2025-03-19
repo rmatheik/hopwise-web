@@ -1,8 +1,10 @@
 /* Ensure the app container uses Flexbox */
 .app-container {
-  display: flex;  /* Use flexbox for sidebar and content */
-  height: 100vh;  /* Full viewport height */
+  display: flex;
+  min-height: 100vh; /* Ensures the container stretches with content */
+  align-items: stretch; /* Forces sidebar to stretch */
 }
+
 
 /* General Sidebar Styling */
 .sidebar {
@@ -10,10 +12,12 @@
   background-color: #ffffff;
   padding: 1.5rem;
   font-family: 'Inter', sans-serif;
-  height: 100vh;  /* Ensure the sidebar takes up full height */
-  overflow-y: auto;  /* Make the sidebar scrollable if the content exceeds height */
+  height: auto; /* Let it expand with content */
+  min-height: 100vh; /* Ensures it’s at least the height of the viewport */
   border-right: 2px solid #dddfe1;
+  flex-shrink: 0; /* Prevents sidebar from shrinking */
 }
+
 
 /* Section Titles */
 .section-title {
@@ -79,11 +83,11 @@
 /* Main content area */
 .main-content {
   flex-grow: 1;
+  max-width: 1200px; /* Ensure both pages match */
+  margin: 0 auto; /* Center properly */
   padding: 2rem;
-  background-color: #ffffff;
-  overflow-y: auto;
-  font-family: 'Inter', sans-serif;
 }
+
 
 /* Ensure images have proper sizing */
 .sidebar .menu-item img {
@@ -243,4 +247,5 @@
   width: 100%;
   margin-bottom: 1rem;
 }
+
 
