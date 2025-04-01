@@ -1,0 +1,105 @@
+.pricing-page {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    gap: 2rem;
+  }
+  
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  /* Card Styles */
+  .price-card {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 250px;
+    text-align: center;
+  }
+  
+  .label {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #111827;
+  }
+  
+  .status {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .lost {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  .gain {
+    background-color: #dcfce7;
+    color: #15803d;
+  }
+  
+  .hopwize-prices .price-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .sub-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  /* Product Image */
+  .product-image img {
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  /* Graph Section */
+  .graph-section {
+    background-color: #f9fafb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 2rem;
+    font-weight: 500;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1rem;
+  }
+  
+  .tab {
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    color: #111827;
+    border-bottom: 2px solid #3b82f6;
+  }
+  
+  .graph-placeholder {
+      height: 320px;
+      width: 100%;
+      position: relative;
+    }
+    

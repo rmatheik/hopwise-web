@@ -44,46 +44,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onLogout }) => {
           </li>
         </ul>
       </div>
-
-      <div className="section">
-        <h2 className="section-title">Pages</h2>
-        <ul>
-          <li className="menu-item">
-            <span className="icon">📂</span>
-            <span>Company</span>
-            <ul className="sub-menu">
-              <li onClick={() => handleNavigation('/overview')}>Overview</li>
-              <li onClick={() => handleNavigation('/business-model')}>Business Model</li>
-              <li onClick={() => handleNavigation('/valuation')}>Valuation</li>
-              <li onClick={() => handleNavigation('/goal-schedule')}>Goal Schedule</li>
-              <li onClick={() => handleNavigation('/drive')}>Drive</li>
-            </ul>
-          </li>
-          <li className="menu-item" onClick={() => handleNavigation('/account')}>
-            <span className="icon">👤</span>
-            <span>Account</span>
-          </li>
-          <li className="menu-item" onClick={() => handleNavigation('/team')}>
-            <span className="icon">👥</span>
-            <span>Team</span>
-          </li>
-          <li className="menu-item" onClick={() => handleNavigation('/tools')}>
-            <span className="icon">🛠</span>
-            <span>Tools</span>
-          </li>
-          <li className="menu-item" onClick={() => handleNavigation('/contact')}>
-            <span className="icon">💬</span>
-            <span>Contact</span>
-          </li>
-        </ul>
-      </div>
-
-      {/* Logout Button */}
-      <div className="logout-section">
-        <button className="logout-button" onClick={onLogout}>
-          Logout
-        </button>
-      </div>
     </nav>
   );
 };

@@ -1,3 +1,19 @@
+/* Apply Inter font globally to the dashboard */
+.market-fit-dashboard,
+.forecast-revenue-section,
+.forecast-summary-cards,
+.forecast-summary-card,
+.forecast-revenue-graph,
+.market-breakdown-container,
+.market-breakdown,
+.market-legend,
+.legend-item,
+.circle-label,
+.market-circle,
+.market-circle-container {
+  font-family: 'Inter', sans-serif;
+}
+
 .market-fit-dashboard {
     display: flex;
     flex-direction: column;
@@ -30,7 +46,7 @@
 .forecast-revenue-graph {
   width: 70%;
   max-width: 900px;
-  height: 500px;
+  height: 530px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 1.5rem;
@@ -92,7 +108,7 @@
   justify-content: flex-start; /* Aligns to the left */
   width: 100%;
   max-width: 1200px; /* Ensures it aligns with the graph */
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   padding-left: 2rem; /* Adjust spacing from the sidebar */
 }
 
@@ -240,4 +256,27 @@
 .legend-value {
   font-weight: bold;
   color: #333;
+}
+.market-breakdown-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2rem;
+}
+
+.forecast-stack-graph {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 400px;
+}
+
+.stacked-chart-container {
+  width: 100%;
+  height: 260px;
 }

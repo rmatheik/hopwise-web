@@ -1,150 +1,118 @@
-/* CompanyPage Styles */
-
 /* Main container adjustments */
 .company-dashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 1rem;
-    background-color: #ffffff;
-    margin: 0 auto; /* Centers the content */
-}
-
-
-/* Summary Cards (Top Section) */
-.company-summary-cards {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
-    gap: 2rem;
-}
-
-.summary-card {
-    background-color: inherit;
-    border-radius: 16px;
     padding: 2rem;
-    flex-grow: 1;
-    min-width: 200px;
-    height: 100px; /* Increased height for better proportion */
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Summary Cards Section */
+  .company-summary-cards {
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
-    text-align: center; /* Ensures text is centered */
-}
-
-/* Ensure text is centered properly */
-.summary-card .card-title {
-    font-size: 1rem; /* Match forecast summary */
-    font-weight: 600;
-    color: #4b5563;
-    margin-bottom: 0.5rem;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+  }
+  
+  .summary-card {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: #f9fafb;
     text-align: center;
-    width: 100%;
-}
-
-.summary-card .card-number {
-    font-size: 2rem; /* Ensure the number is large */
-    font-weight: bold;
-    color: #111827;
-    width: 100%;
-    text-align: center; /* Ensure number is centered */
-}
-
-/* Fix inconsistent background colors */
-.valuation-card {
-    background: var(--Primary-Purple, #E5ECF6); /* Keep purple */
-}
-
-.company-revenue-card {
-    background: #E3F5FF; /* Keep blue */
-}
-/* Styling for the card titles (Company Revenue and Valuation) */
-/* Styling for the card titles */
-.card-title {
-    font-size: 0.875rem; /* Smaller title */
+  }
+  
+  .valuation-card {
+    background-color: #e5ecf6;
+  }
+  
+  .company-revenue-card {
+    background-color: #e3f5ff;
+  }
+  
+  .card-title {
+    font-size: 0.875rem;
     font-weight: 500;
     color: #4b5563;
-}
-
-/* Styling for the numbers in the cards */
-.card-number {
-    width: 119px;
-    height: var(--Line-height-12-18, 18px);
-    flex-shrink: 0;
-    color: #000000; /* Black color for numbers */
-    font-feature-settings: 'ss01' on, 'cv01' on, 'cv11' on;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px; /* 75% line-height */
-}
-
-.graph-placeholder {
-    flex-grow: 1;
-    background-color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  /* About + Graph Section */
+  .company-graph-about-section {
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    font-size: 1rem;
-    color: #000000;
-    font-family: 'Inter', sans-serif;
-}
-
-
-/*  Make sure the graph and about section are on a new line after summary cards */
-.company-graph-about-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    margin: 2rem auto;
     gap: 2rem;
-}
-
-
-/*  About section styling */
-.about-section {
-    width: 20%;
-    background-color: #F0F8FF;
-    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* About Section */
+  .about-section {
+    flex: 1;
+    background-color: #f0f8ff;
+    border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     height: 400px;
-    font-family: 'Inter', sans-serif;
-}
-
-/*  Graph styling */
-.company-revenue-graph {
-    width: 80%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-}
-
-
-.about-section h3 {
-    font-size: 1.25rem;
+  }
+  
+  .about-section h3 {
+    font-size: 1.125rem;
     font-weight: 600;
-    color: #000000;
+    color: #111827;
     margin-bottom: 1rem;
-}
-
-.about-section p {
-    font-size: 1rem;
+  }
+  
+  .about-section p {
+    font-size: 0.95rem;
     color: #4b5563;
-    line-height: 1.5;
-    word-wrap: break-word;
-}
-
-
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  
+  .about-section a {
+    color: #3b82f6;
+    text-decoration: none;
+  }
+  
+  .about-section a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Graph Section */
+  .company-revenue-graph {
+    flex: 2;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+  }
+  
+  .company-revenue-graph h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+  
+  .graph-placeholder {
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+  }
+  

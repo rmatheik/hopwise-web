@@ -1,0 +1,65 @@
+/* Header Styling */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the main logo */
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #dddfe1;
+    height: 60px; /* Adjust header height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* User Logo Container (Left Side) */
+.header-left {
+    position: absolute;
+    left: 20px; /* Moves it more to the left */
+    display: flex;
+    align-items: center;
+}
+
+/* User Logo Styling */
+.user-logo {
+    height: 70px; /* Make it smaller */
+    width: 70px;
+    border-radius: 50%; /* Keeps it circular */
+}
+
+/* Main Logo Styling (Hopwize Logo) */
+.header-logo {
+    height: 40px; /* Adjust size */
+    width: auto;
+}
+
+/* Container for logo */
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-logout {
+    position: absolute;
+    right: 6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    padding: 6px 12px;       /* Smaller padding */
+    font-size: 0.85rem;      /* Slightly smaller text */
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;     /* Prevent stretching */
+    width: 10%;             /* Prevent full width */
+    height: 35%;
+  
+    min-width: unset;
+    max-width: 160px;
+  }
+  
