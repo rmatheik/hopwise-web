@@ -44,13 +44,15 @@
 
 /* Forecast Revenue Graph (Left) */
 .forecast-revenue-graph {
-  width: 70%;
+  width: 65%;
   max-width: 900px;
-  height: 530px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  background-color: #f9f9f9dd; /* Lighter and softer than #f9f9f9dd */
+  border-radius: 20px; /* More rounded for modern feel */
+  padding: 2rem; /* Slightly more padding for space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Summary Cards (Right) */
@@ -59,35 +61,40 @@
   flex-direction: column;
   justify-content: space-between;
   width: 20%;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
+/* Individual Card */
 .forecast-summary-card {
   background-color: #f0f8ff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px; /* more rounded */
+  padding: 1.25rem 1rem;
   text-align: center;
+  transition: all 0.2s ease;
 }
 
 .forecast-summary-card h4 {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: #4b5563;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .forecast-summary-card p {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #111827;
+  margin: 0;
 }
 
 .forecast-summary-card span {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: #10b981;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
+
 
   
 /* Market Breakdown Section */
@@ -108,35 +115,11 @@
   justify-content: flex-start; /* Aligns to the left */
   width: 100%;
   max-width: 1200px; /* Ensures it aligns with the graph */
-  margin-top: 1rem;
-  padding-left: 2rem; /* Adjust spacing from the sidebar */
+  margin-top: 2rem;
+  padding-left: .5rem; /* Adjust spacing from the sidebar */
 }
 
 
-/* Market Breakdown Box */
-/* Market Breakdown Section - Keep Left but Center Contents */
-.market-breakdown-container {
-  display: flex;
-  justify-content: flex-start; /* Keeps it aligned with the graph */
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 1.5rem;
-  padding-left: 2rem; /* Adjust spacing from the sidebar */
-}
-
-/* Market Breakdown Box */
-.market-breakdown {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 350px;
-  text-align: center;
-  margin-left: 0; /* No forced centering */
-}
 
 /* Market Circles Container */
 .market-circle-container {
@@ -217,14 +200,12 @@
 }
 
 
-/* Legend */
+/* Adjust legend to align on right */
 .market-legend {
-  margin-top: 20px;
   text-align: left;
-  width: 100%;
-  padding: 0 1rem;
+  padding: 0;
+  width: 180px;
 }
-
 .legend-item {
   display: flex;
   justify-content: space-between;
@@ -257,23 +238,28 @@
   font-weight: bold;
   color: #333;
 }
-.market-breakdown-section {
+/* Market Breakdown Box */
+.market-breakdown {
+  background-color: #f9f9f9dd;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 2rem;
+  flex-direction: row; /* Change from column to row */
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  text-align: center;
+  gap: 1.5rem; /* Add spacing between circle and legend */
+  padding-left: 0;    
 }
 
 .forecast-stack-graph {
-  background-color: #ffffff;
+  background-color: #f9f9f9dd;
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 500px;
   height: 400px;
+  margin-right: auto;
 }
 
 .stacked-chart-container {

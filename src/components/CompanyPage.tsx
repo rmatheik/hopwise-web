@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'; // Import for redirection
 import { Line } from "react-chartjs-2";
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
-
-
+import logo from '../assets/apple_logo.png';
+//import './MarketFitPage.css'; // Import the CSS specific to this page
 
 // Register the necessary Chart.js components
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
@@ -118,46 +118,85 @@ const CompanyPage: React.FC = () => {
 
   // Chart Data
   const chartData = {
-    labels: revenueData.map(item => item.year),
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
     datasets: [
       {
-        label: "Revenue ($)",
-        data: revenueData.map(item => item.revenue),
-        borderColor: "rgb(200, 230, 246)",
-        backgroundColor: "rgb(200, 230, 246)",
+        label: 'This Month',
+        data: [10000, 8000, 12000, 22000, 18000, 20000, 21000],
+        borderColor: '#a4d3ed',
+        backgroundColor: '#a4d3ed',
         borderWidth: 2,
+        tension: 0.4,
         fill: false,
+        pointBackgroundColor: '#84b3e3',
+        pointBorderColor: '#84b3e3',
+        pointRadius: 2,
+      },
+      {
+        label: 'Last Month',
+        data: [5000, 10000, 16000, 10000, 14000, 16000, 17000],
+        borderColor: '#cbd5e1',
+        borderDash: [5, 5],
+        backgroundColor: '#cbd5e1',
+        tension: 0.4,
+        fill: false,
+        pointRadius: 0
       }
     ]
   };
+  
 
   // Chart Options
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { 
+      legend: {
         display: true,
-        labels: {color: '#000000'}
+        labels: {
+          color: '#6b7280', // soft grey
+          boxWidth: 10,
+          boxHeight: 10,
+          usePointStyle: true,
+          pointStyle: 'circle'
+        }
       },
-      title: { display: false}
+      title: {
+        display: false
+      }
     },
     scales: {
       x: {
-        ticks: {color: '#000000'},
-        grid: {color: 'rgba(0, 0, 0, 0.1)'},
+        ticks: { color: '#9ca3af' }, // soft grey
+        grid: {
+          color: 'rgba(0,0,0,0.05)' // very faint lines
+        }
       },
       y: {
-        ticks: {color: '#000000'},
-        grid: {color: 'rgba(0, 0, 0, 0.1)'},
-      },
+        ticks: {
+          color: '#9ca3af',
+          callback: function(value: number) {
+            return value >= 1000 ? `${value / 1000}K` : value;
+          }
+          
+        },
+        grid: {
+          color: 'rgba(0,0,0,0.05)'
+        }
+      }
     },
   };
   
+  
 
   return (
-      <div className="company-dashboard">
-      {/*  Summary Cards */}
+  <div className="company-dashboard">
+    {/* Summary Cards */}
+    <div className="company-header-section">
+      {/* Logo on the left */}
+      <img src={logo} alt="Company Logo" className="company-logo-image" />
+
+      {/* Summary Cards */}
       <div className="company-summary-cards">
         <div className="summary-card valuation-card">
           <div className="card-title">Valuation</div>
@@ -178,37 +217,85 @@ const CompanyPage: React.FC = () => {
           </div>
         </div>
       </div>
-    
-      {/*  New line for About + Graph Section */}
-      <div className="company-graph-about-section">
-        <div className="about-section">
+    </div>
+
+    {/* About + Graph Section */}
+    <div className="company-graph-about-section">
+      <div className="about-section">
         <h3>About</h3>
-          {companyDetails.Company_Name && <p><strong>Name:</strong> {companyDetails.Company_Name}</p>}
-          {companyDetails.Industry && <p><strong>Industry:</strong> {companyDetails.Industry}</p>}
-          {(companyDetails.City || companyDetails.State || companyDetails.Country) && (
-            <p>
-              <strong>Location:</strong> {`${companyDetails.City ?? ''}${companyDetails.State ? `, ${companyDetails.State}` : ''}${companyDetails.Country ? `, ${companyDetails.Country}` : ''}`}
-            </p>
-          )}
-          {companyDetails.Funding_Stage && <p><strong>Funding Stage:</strong> {companyDetails.Funding_Stage}</p>}
-          {companyDetails.URL && (
-            <p>
-              <strong>Website:</strong> <a href={companyDetails.URL} target="_blank" rel="noopener noreferrer">{companyDetails.URL}</a>
-            </p>
+        {companyDetails.Company_Name && <p><strong>Name:</strong> {companyDetails.Company_Name}</p>}
+        {companyDetails.Industry && <p><strong>Industry:</strong> {companyDetails.Industry}</p>}
+        {(companyDetails.City || companyDetails.State || companyDetails.Country) && (
+          <p>
+            <strong>Location:</strong>{" "}
+            {`${companyDetails.City ?? ''}${companyDetails.State ? `, ${companyDetails.State}` : ''}${companyDetails.Country ? `, ${companyDetails.Country}` : ''}`}
+          </p>
+        )}
+        {companyDetails.Funding_Stage && (
+          <p><strong>Funding Stage:</strong> {companyDetails.Funding_Stage}</p>
+        )}
+        {companyDetails.URL && (
+          <p>
+            <strong>Website:</strong>{" "}
+            <a href={companyDetails.URL} target="_blank" rel="noopener noreferrer">
+              {companyDetails.URL}
+            </a>
+          </p>
+        )}
+      </div>
+
+      <div className="company-revenue-graph">
+        <h3>Revenue Over Time</h3>
+        <div className="graph-placeholder" style={{ width: '100%', height: '400px' }}>
+          {revenueData.length > 0 ? (
+            <Line data={chartData} options={chartOptions} />
+          ) : (
+            <p>Loading revenue chart...</p>
           )}
         </div>
-    
-        <div className="company-revenue-graph">
-          <h3>Revenue Over Time</h3>
-          <div className="graph-placeholder" style={{ width: '100%', height: '400px' }}>
-            {revenueData.length > 0 ? <Line data={chartData} options={chartOptions} /> : <p>Loading revenue chart...</p>}
+      </div>
+    </div>
+
+    {/* Market Breakdown Section */}
+    <div className="market-breakdown-container">
+      <div className="market-breakdown">
+        <div className="market-circle-container">
+          <div className="market-circle tam">
+            <span className="circle-label">$1.4B</span>
+          </div>
+          <div className="market-circle sam">
+            <span className="circle-label">$50M</span>
+          </div>
+          <div className="market-circle som">
+            <span className="circle-label">$5M</span>
+          </div>
+        </div>
+
+        <div className="market-legend">
+          <div className="legend-item">
+            <span className="legend-color tam-color"></span> TAM
+            <span className="legend-value">96.3%</span>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color sam-color"></span> SAM
+            <span className="legend-value">3.60%</span>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color som-color"></span> SOM
+            <span className="legend-value">0.38%</span>
           </div>
         </div>
       </div>
     </div>
-  
 
-  );
+
+      {/* OPTIONAL: Right side content */}
+      {/* <div className="some-right-section">
+        Your graph/map/anything else
+      </div> */}
+    </div>
+);
+
 };
 
 export default CompanyPage;

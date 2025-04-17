@@ -38,10 +38,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onLogout }) => {
             <span className="icon">📉</span>
             <span>Forecasting</span>
           </li>
-          <li className="menu-item" onClick={() => handleNavigation('/valuation')}>
-            <span className="icon">📚</span>
-            <span>Valuation</span>
-          </li>
         </ul>
       </div>
     </nav>

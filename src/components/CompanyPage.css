@@ -1,118 +1,265 @@
-/* Main container adjustments */
 .company-dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 2rem;
-    background-color: #ffffff;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* Summary Cards Section */
-  .company-summary-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 2rem;
-  }
-  
-  .summary-card {
-    flex: 1;
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    background-color: #f9fafb;
-    text-align: center;
-  }
-  
-  .valuation-card {
-    background-color: #e5ecf6;
-  }
-  
-  .company-revenue-card {
-    background-color: #e3f5ff;
-  }
-  
-  .card-title {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #4b5563;
-    margin-bottom: 0.5rem;
-  }
-  
-  .card-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #111827;
-  }
-  
-  /* About + Graph Section */
-  .company-graph-about-section {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  /* About Section */
-  .about-section {
-    flex: 1;
-    background-color: #f0f8ff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    height: 400px;
-  }
-  
-  .about-section h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 1rem;
-  }
-  
-  .about-section p {
-    font-size: 0.95rem;
-    color: #4b5563;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-  }
-  
-  .about-section a {
-    color: #3b82f6;
-    text-decoration: none;
-  }
-  
-  .about-section a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Graph Section */
-  .company-revenue-graph {
-    flex: 2;
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-  }
-  
-  .company-revenue-graph h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 1rem;
-  }
-  
-  .graph-placeholder {
-    flex-grow: 1;
-    width: 100%;
-    overflow: hidden;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Summary Cards */X
+.company-summary-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 16px;
+  background-color: #f9fafb;
+  text-align: center;
+  box-shadow: none;
+}
+
+.valuation-card {
+  background-color: #e5ecf6;
+}
+
+.company-revenue-card {
+  background-color: #e3f5ff;
+}
+
+.card-title {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.card-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* About + Graph Section */
+.company-graph-about-section {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* About Section */
+.about-section {
+  width: 20%;
+  background-color: #f0f8ff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 350px;
+}
+
+.about-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.about-section a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
+
+/* Graph Section */
+.company-revenue-graph {
+  flex: 2;
+  background-color: #f9f9f9dd;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.company-revenue-graph h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #676767;
+  margin-bottom: 1rem;
+}
+
+.graph-placeholder {
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.company-header-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 2rem;
+}
+
+.company-logo-image {
+  width: 100px;
+  height: auto;
+  flex-shrink: 0;
+}
+.graph-placeholder canvas {
+  border-radius: 16px;
+}
+
+/* Market Overview Section */
+.market-overview-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Adds space between the graph and legend */
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2rem;
+}
+
+/* Market Circles and Legend Box */
+.market-circles-box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  justify-content: space-between;
+}
+
+.market-circle-container {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.market-circle {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.tam {
+  width: 200px;
+  height: 200px;
+  background-color: #a9c7e6;
+  top: 0px;
+  left: 10px;
+}
+
+.sam {
+  width: 150px;
+  height: 150px;
+  background-color: #d5f0f5;
+  top: 40px;
+  left: 35px;
+}
+
+.som {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(178, 215, 236);
+  top: 90px;
+  left: 60px;
+}
+
+.circle-label {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 20;
+}
+
+.tam .circle-label {
+  top: 10%;
+}
+.sam .circle-label {
+  top: 15%;
+}
+.som .circle-label {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.market-legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+  font-size: 1rem;
+  min-width: 150px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.tam-color {
+  background-color: #a9c7e6;
+}
+.sam-color {
+  background-color: #d5f0f5;
+}
+.som-color {
+  background-color: rgb(178, 215, 236);
+}
+
+.legend-value {
+  font-weight: bold;
+  margin-left: auto;
+}

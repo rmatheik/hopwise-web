@@ -6,6 +6,8 @@ import LoginPage from './components/LoginPage';
 import Header from './components/Header';
 import MarketFitPage from './components/MarketFitPage';
 import PricingPage from './components/PricingPage';
+import ForecastingPage from './components/ForecastingPage';
+
 
 import '../css/styles.css';
 
@@ -41,14 +43,16 @@ const App: React.FC = () => {
         <Header /> {/* <-- Added Header here */}
         {isAuthenticated && <Sidebar onSectionClick={() => {}} onLogout={handleLogout} />}
         <div className="main-content">
-          <Routes>
-            <Route path="/" element={isAuthenticated ? <Navigate to="/company" /> : <Navigate to="/login" />} />
-            <Route path="/login" element={isAuthenticated ? <Navigate to="/company" /> : <LoginPage onLogin={handleLoginSuccess} />} />
-            <Route path="/company" element={isAuthenticated ? <CompanyPage /> : <Navigate to="/login" />} />
-            <Route path="/market-fit" element={isAuthenticated ? <MarketFitPage /> : <Navigate to="/login" />} /> {}
-            <Route path="/pricing" element={isAuthenticated ? <PricingPage /> : <Navigate to="/login" />} />
-            <Route path="*" element={<Navigate to="/" />} /> 
-          </Routes>
+        <Routes>
+          <Route path="/" element={isAuthenticated ? <Navigate to="/company" /> : <Navigate to="/login" />} />
+          <Route path="/login" element={isAuthenticated ? <Navigate to="/company" /> : <LoginPage onLogin={handleLoginSuccess} />} />
+          <Route path="/company" element={isAuthenticated ? <CompanyPage /> : <Navigate to="/login" />} />
+          <Route path="/market-fit" element={isAuthenticated ? <MarketFitPage /> : <Navigate to="/login" />} />
+          <Route path="/pricing" element={isAuthenticated ? <PricingPage /> : <Navigate to="/login" />} />
+          <Route path="/forecasting" element={isAuthenticated ? <ForecastingPage /> : <Navigate to="/login" />} /> {/* ✅ New route */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+
         </div>
       </div>
     </Router>

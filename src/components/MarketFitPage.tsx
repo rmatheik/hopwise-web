@@ -164,32 +164,6 @@ const MarketFitPage: React.FC = () => {
 
       {/* Market Breakdown & Stacked Graph */}
       <div className="market-breakdown-section">
-        <div className="market-breakdown">
-          <h3>Market Breakdown</h3>
-          <div className="market-circle-container">
-            <div className="market-circle tam">
-              <span className="circle-label">$1.4B</span>
-            </div>
-            <div className="market-circle sam">
-              <span className="circle-label">$50M</span>
-            </div>
-            <div className="market-circle som">
-              <span className="circle-label">$5M</span>
-            </div>
-          </div>
-          <div className="market-legend">
-            <div className="legend-item">
-              <span className="legend-color tam-color"></span> TAM <span className="legend-value">96.3%</span>
-            </div>
-            <div className="legend-item">
-              <span className="legend-color sam-color"></span> SAM <span className="legend-value">3.60%</span>
-            </div>
-            <div className="legend-item">
-              <span className="legend-color som-color"></span> SOM <span className="legend-value">0.38%</span>
-            </div>
-          </div>
-        </div>
-
         <div className="forecast-stack-graph">
           <h3>Forecast Market Breakdown</h3>
           <div className="stacked-chart-container">
