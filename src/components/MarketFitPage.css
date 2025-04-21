@@ -144,6 +144,7 @@
   text-align: center;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow */
   z-index: 10; /* Ensure text stays above the background */
+  margin-top: 1.5rem;
 }
 
 

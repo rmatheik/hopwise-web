@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
@@ -257,6 +257,67 @@
 }
 .som-color {
   background-color: rgb(178, 215, 236);
+}
+
+.legend-value {
+  font-weight: bold;
+  margin-left: auto;
+}
+.donut-chart-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #f9f9f9dd;
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: 250px;
+  width: 500px;
+  margin-left: 2rem;
+  padding-left: 5rem;
+}
+
+.donut-chart-placeholder {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  gap: 1rem;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.black-dot {
+  background-color: #111;
+}
+
+.green-dot {
+  background-color: #b8eacb;
+}
+
+.blue-dot {
+  background-color: #b7ddf7;
 }
 
 .legend-value {

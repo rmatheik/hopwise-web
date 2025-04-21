@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom'; // Import for redirection
 import { Line } from "react-chartjs-2";
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
 import logo from '../assets/apple_logo.png';
+import { Doughnut } from 'react-chartjs-2';
+import {Chart as ChartJS, ArcElement, Legend as ChartLegend,} from 'chart.js';
+ChartJS.register(ArcElement, ChartLegend);
 //import './MarketFitPage.css'; // Import the CSS specific to this page
 
 // Register the necessary Chart.js components
@@ -186,6 +189,27 @@ const CompanyPage: React.FC = () => {
       }
     },
   };
+
+  const donutData = {
+    labels: ['FC', 'VC', 'Added Value'],
+    datasets: [
+      {
+        data: [38.6, 22.5, 30.8],
+        backgroundColor: ['#111', '#b8eacb', '#b7ddf7'],
+        borderWidth: 0,
+      },
+    ],
+  };
+  
+  const donutOptions = {
+    cutout: '70%',
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+  
   
   
 
@@ -286,13 +310,29 @@ const CompanyPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="donut-chart-box">
+      <div className="donut-chart-placeholder">
+        <Doughnut data={donutData} options={donutOptions} />
+      </div>
+      <div className="donut-legend">
+        <div className="donut-legend-item">
+          <span className="legend-dot black-dot"></span>
+          FC
+          <span className="legend-value">38.6%</span>
+        </div>
+        <div className="donut-legend-item">
+          <span className="legend-dot green-dot"></span>
+          VC
+          <span className="legend-value">22.5%</span>
+        </div>
+        <div className="donut-legend-item">
+          <span className="legend-dot blue-dot"></span>
+          Added Value
+          <span className="legend-value">30.8%</span>
+        </div>
+      </div>
     </div>
-
-
-      {/* OPTIONAL: Right side content */}
-      {/* <div className="some-right-section">
-        Your graph/map/anything else
-      </div> */}
+    </div>
     </div>
 );
 
